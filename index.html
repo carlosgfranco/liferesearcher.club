@@ -17,12 +17,18 @@
                 <i class="fa-solid fa-terminal mr-2"></i>liferesearcher.club
             </a>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#laboratorio" class="hover:text-cyan-400 transition">El Lab</a>
-                <a href="#proyectos" class="hover:text-cyan-400 transition">Proyectos</a>
-                <a href="#stack" class="hover:text-cyan-400 transition">Stack</a>
+                <a href="#laboratorio" class="hover:text-cyan-400 transition" data-i18n="nav_lab">El Lab</a>
+                <a href="#proyectos" class="hover:text-cyan-400 transition" data-i18n="nav_projects">Proyectos</a>
+                <a href="#stack" class="hover:text-cyan-400 transition" data-i18n="nav_stack">Stack</a>
             </nav>
-            <div>
-                <a href="https://github.com/carlosgfranco" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm font-medium transition border border-slate-700">
+            <div class="flex items-center space-x-4">
+                <!-- Selector de Idioma -->
+                <select id="languageSelector" class="bg-slate-900 border border-slate-700 text-slate-200 text-sm rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-cyan-500 transition">
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="en">🇬🇧 EN</option>
+                </select>
+
+                <a href="https://github.com/carlosgfranco" target="_blank" class="hidden sm:inline-block bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm font-medium transition border border-slate-700">
                     <i class="fa-brands fa-github mr-2"></i>GitHub
                 </a>
             </div>
@@ -31,79 +37,80 @@
 
     <!-- HERO SECTION -->
     <section class="min-h-screen flex items-center justify-center pt-20 pb-16 px-6 relative overflow-hidden">
-        <!-- Efecto de brillo de fondo -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <span class="inline-block bg-cyan-950/80 text-cyan-400 text-xs font-semibold px-3 py-1 rounded-full mb-6 border border-cyan-800/50">
-                <i class="fa-solid fa-server mr-1.5"></i> Laboratorio Casero Activo
+                <i class="fa-solid fa-server mr-1.5"></i> <span data-i18n="hero_badge">Laboratorio Casero Activo</span>
             </span>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                Investigación, redes y <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">self-hosting</span> desde casa.
+                <span data-i18n="hero_title_1">Investigación, redes y</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500" data-i18n="hero_title_highlight">self-hosting</span> <span data-i18n="hero_title_2">desde casa.</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto" data-i18n="hero_desc">
                 Documentando la infraestructura técnica de mi laboratorio personal: gestión de contenedores, redes malladas privadas y control absoluto del dato.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#proyectos" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-6 py-3 rounded-xl transition shadow-lg shadow-cyan-500/20">
+                <a href="#proyectos" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-6 py-3 rounded-xl transition shadow-lg shadow-cyan-500/20" data-i18n="btn_projects">
                     Explorar Proyectos
                 </a>
-                <a href="#laboratorio" class="bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold px-6 py-3 rounded-xl transition border border-slate-800">
+                <a href="#laboratorio" class="bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold px-6 py-3 rounded-xl transition border border-slate-800" data-i18n="btn_lab">
                     Conocer el Lab
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- PROYECTOS -->
-    <section id="proyectos" class="py-24 px-6 border-t border-slate-900 bg-slate-900/40">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Proyectos del Laboratorio</h2>
-                <p class="text-slate-400 max-w-xl mx-auto">Los pilares sobre los que se construye la infraestructura de la red.</p>
-            </div>
+    <!-- SCRIPT DE TRADUCCIÓN -->
+    <script>
+        const translations = {
+            es: {
+                nav_lab: "El Lab",
+                nav_projects: "Proyectos",
+                nav_stack: "Stack",
+                hero_badge: "Laboratorio Casero Activo",
+                hero_title_1: "Investigación, redes y",
+                hero_title_highlight: "self-hosting",
+                hero_title_2: "desde casa.",
+                hero_desc: "Documentando la infraestructura técnica de mi laboratorio personal: gestión de contenedores, redes malladas privadas y control absoluto del dato.",
+                btn_projects: "Explorar Proyectos",
+                btn_lab: "Conocer el Lab"
+            },
+            en: {
+                nav_lab: "The Lab",
+                nav_projects: "Projects",
+                nav_stack: "Stack",
+                hero_badge: "Active Home Lab",
+                hero_title_1: "Research, networking and",
+                hero_title_highlight: "self-hosting",
+                hero_title_2: "from home.",
+                hero_desc: "Documenting my personal laboratory's technical infrastructure: container management, private mesh networks, and absolute data control.",
+                btn_projects: "Explore Projects",
+                btn_lab: "About the Lab"
+            }
+        };
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Proyecto 1: DNS -->
-                <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/50 transition group">
-                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-shield-halved text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-100">DNS Privado & Filtrado</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Resolución de nombres local y bloqueo de publicidad/telemetría a nivel de red para toda la infraestructura doméstica de forma centralizada.
-                    </p>
-                </div>
+        const languageSelector = document.getElementById('languageSelector');
 
-                <!-- Proyecto 2: Docker -->
-                <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/50 transition group">
-                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition">
-                        <i class="fa-brands fa-docker text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-100">Orquestación con Docker</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Despliegue contenerizado de servicios, gestión automatizada de volúmenes, redes puente y despliegues reproducibles mediante compose.
-                    </p>
-                </div>
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred_lang', lang);
+        }
 
-                <!-- Proyecto 3: Tailscale -->
-                <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/50 transition group">
-                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-network-wired text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-100">Redes Seguras Tailscale</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Conectividad mallada (Mesh VPN) cifrada de extremo a extremo para acceder de forma segura al laboratorio desde cualquier ubicación sin abrir puertos.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+        // Detectar cambio en el desplegable
+        languageSelector.addEventListener('change', (event) => {
+            setLanguage(event.target.value);
+        });
 
-    <!-- FOOTER -->
-    <footer class="py-12 px-6 border-t border-slate-900 text-center text-sm text-slate-500">
-        <p>© 2026 Life Researcher Lab. Desplegado con Cloudflare Pages.</p>
-    </footer>
-
+        // Cargar idioma guardado o por defecto (es)
+        const savedLang = localStorage.getItem('preferred_lang') || 'es';
+        languageSelector.value = savedLang;
+        setLanguage(savedLang);
+    </script>
 </body>
 </html>
